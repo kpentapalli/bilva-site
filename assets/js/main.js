@@ -141,7 +141,6 @@
                 '<div class="mega-foot"><div class="partners">' + partners + '</div><a class="link-arrow" href="services.html">All capabilities ' + iconSvg('arrow') + '</a></div>' +
               '</div></li>' +
             '<li><a href="industries.html">Industries</a></li>' +
-            '<li><a href="index.html#insights">Insights</a></li>' +
             '<li><a href="contact.html">Contact</a></li>' +
           '</ul>' +
           '<div class="nav-cta">' +
@@ -154,7 +153,6 @@
           '<a href="about.html">Who We Are</a>' +
           '<a href="services.html">Capabilities</a>' + mobileSubs +
           '<a href="industries.html">Industries</a>' +
-          '<a href="index.html#insights">Insights</a>' +
           '<a href="contact.html">Contact</a>' +
           '<a href="design-template.html">Design Template</a>' +
           '<a class="btn btn-primary" href="contact.html">Schedule a Discovery Call</a>' +
@@ -192,7 +190,6 @@
               '<li><a href="about.html">Who We Are</a></li>' +
               '<li><a href="industries.html">Industries</a></li>' +
               '<li><a href="index.html#impact">Case Studies</a></li>' +
-              '<li><a href="index.html#insights">Insights</a></li>' +
               '<li><a href="services.html#mergers-and-acquisitions">Mergers &amp; Acquisitions</a></li>' +
               '<li><a href="contact.html">Contact</a></li>' +
               '<li><a href="design-template.html">Design Template</a></li>' +
