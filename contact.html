@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="gold">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Bilva</title>
+  <meta name="description" content="Schedule a discovery call with Bilva. Call 703-452-7459 or email info@bilva.us.">
+  <link rel="icon" href="assets/img/logo.png">
+  <script>try{document.documentElement.setAttribute('data-theme',new URLSearchParams(location.search).get('theme')||localStorage.getItem('bilva-theme')||'gold')}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a><span>/</span><strong>Contact</strong></div>
+      <span class="eyebrow">Contact</span>
+      <h1>Schedule a <span class="grad-text">discovery call</span></h1>
+      <p class="lead">Thirty minutes with a senior architect. We will listen, ask the hard questions and come back with a clear point of view on how to move forward.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container split" style="align-items:start">
+      <form class="card form reveal" data-demo novalidate style="padding:36px">
+        <div class="field"><label for="c-name">Name</label><input id="c-name" type="text" placeholder="Jane Doe" required></div>
+        <div class="field"><label for="c-email">Work email</label><input id="c-email" type="email" placeholder="jane@company.com" required></div>
+        <div class="field"><label for="c-phone">Phone</label><input id="c-phone" type="tel" placeholder="(555) 555-5555"></div>
+        <div class="field"><label for="c-company">Company website</label><input id="c-company" type="url" placeholder="https://"></div>
+        <div class="field"><label for="c-interest">I'm interested in</label><select id="c-interest"><option>Artificial Intelligence</option><option>Cloud &amp; Hybrid</option><option>Web &amp; eCommerce</option><option>Mobile App Development</option><option>Salesforce / CRM</option><option>SAP / ERP</option><option>ServiceNow</option><option>Embedded &amp; IoT</option><option>Security</option><option>Mergers &amp; Acquisitions</option><option>Something else</option></select></div>
+        <div class="field"><label for="c-timeline">Timeline</label><select id="c-timeline"><option>As soon as possible</option><option>Next quarter</option><option>This year</option><option>Just exploring</option></select></div>
+        <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" placeholder="Tell us a little about what you are trying to achieve"></textarea></div>
+        <div class="full" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap"><button class="btn btn-primary" type="submit">Send message <i data-icon="arrow"></i></button><span class="muted small">We reply within one business day.</span></div>
+        <p class="form-msg full small" style="display:none;color:var(--accent);margin:0"></p>
+      </form>
+
+      <div class="reveal">
+        <div class="contact-info card" style="margin-bottom:24px">
+          <div class="row"><div class="ico-box"><i data-icon="phone"></i></div><div><strong>Call us</strong><a href="tel:+17034527459">703-452-7459</a></div></div>
+          <div class="row"><div class="ico-box"><i data-icon="mail"></i></div><div><strong>Email</strong><a href="mailto:info@bilva.us">info@bilva.us</a></div></div>
+          <div class="row"><div class="ico-box"><i data-icon="pin"></i></div><div><strong>Headquarters</strong><span>United States · <em class="muted">address to be confirmed</em></span></div></div>
+          <div class="row"><div class="ico-box"><i data-icon="clock"></i></div><div><strong>Hours</strong><span>Mon–Fri, 8am–6pm CT</span></div></div>
+        </div>
+        <div class="card">
+          <span class="eyebrow">What happens next</span>
+          <ul class="value-list" style="margin-top:8px">
+            <li><div class="ico-box"><i data-icon="mail"></i></div><div><strong>1. We reply within a day</strong><p>A real person, not an autoresponder, confirms a time that works.</p></div></li>
+            <li><div class="ico-box"><i data-icon="users"></i></div><div><strong>2. Discovery call</strong><p>Thirty minutes with a senior architect to understand your goals and constraints.</p></div></li>
+            <li><div class="ico-box"><i data-icon="target"></i></div><div><strong>3. Point of view</strong><p>A short written recommendation with options, timeline and rough investment.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

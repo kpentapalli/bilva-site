@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="gold">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Template — Bilva</title>
+  <meta name="description" content="Bilva design system: three dark-mode color themes (gold, dark blue, multi-color), typography, components, spacing and logo usage.">
+  <link rel="icon" href="assets/img/logo.png">
+  <script>try{document.documentElement.setAttribute('data-theme',new URLSearchParams(location.search).get('theme')||localStorage.getItem('bilva-theme')||'gold')}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .ds-section { scroll-margin-top: 100px; }
+    .ds-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .token-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .token { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: var(--bg-2); font-size: .85rem; }
+    .token strong { display: block; font-family: var(--font-display); margin-bottom: 4px; }
+    .token code { color: var(--muted); font-size: .78rem; }
+    .radius-demo { display: flex; gap: 12px; flex-wrap: wrap; }
+    .radius-demo div { width: 90px; height: 70px; background: var(--bg-3); border: 1px solid var(--line-strong); display: grid; place-items: center; font-size: .75rem; color: var(--muted); }
+    .icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+    .icon-grid div { border: 1px solid var(--line); border-radius: 12px; padding: 14px 8px; display: grid; place-items: center; gap: 8px; font-size: .72rem; color: var(--muted); background: var(--bg-2); }
+    .icon-grid svg { width: 22px; height: 22px; color: var(--accent); }
+    .grad-bar { height: 56px; border-radius: 14px; background: var(--grad); }
+    .theme-active-name::after { content: attr(data-gold); }
+    :root[data-theme="blue"] .theme-active-name::after { content: attr(data-blue); }
+    :root[data-theme="multi"] .theme-active-name::after { content: attr(data-multi); }
+    @media (max-width: 900px) { .token-grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">Home</a><span>/</span><strong>Design Template</strong></div>
+      <span class="eyebrow">Design system</span>
+      <h1>Bilva <span class="grad-text">Design Template</span></h1>
+      <p class="lead">One dark-mode design system with three interchangeable color themes. Use the floating switcher (bottom right) to preview every component below in Gold, Dark Blue or Multi-color. The whole site re-themes from a single CSS variable block.</p>
+      <p class="chip"><span class="dot"></span> Active theme: <span class="theme-active-name" data-gold="Gold" data-blue="Dark Blue" data-multi="Multi-color"></span></p>
+      <div class="ds-nav">
+        <a class="chip outline" href="#themes">Themes</a><a class="chip outline" href="#palette">Palette</a><a class="chip outline" href="#type">Typography</a><a class="chip outline" href="#buttons">Buttons</a><a class="chip outline" href="#cards">Cards</a><a class="chip outline" href="#forms">Forms</a><a class="chip outline" href="#icons">Icons</a><a class="chip outline" href="#logo">Logo</a><a class="chip outline" href="#tokens">Tokens</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEMES -->
+  <section class="section ds-section" id="themes">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">01 · Themes</span><h2>Three themes, one <span class="grad-text">system</span></h2><p class="lead">Every theme shares the same layout, type and components. Only the color tokens change, so switching is a one-line change to <code>data-theme</code> on the <code>&lt;html&gt;</code> element.</p></div>
+      <div class="theme-preview reveal-stagger">
+        <div class="tp" style="background:#0A0B0F">
+          <div class="top" style="background:radial-gradient(60% 55% at 70% 30%, rgba(217,174,78,.35), transparent 70%), #0A0B0F"></div>
+          <div class="body"><strong style="color:#F5F3EE">Gold <span style="color:#8F8C84;font-weight:400">· default</span></strong><span style="color:#8F8C84">Warm, premium, matches the leaf-mark logo. Best for a trust-and-heritage tone.</span>
+            <div class="dots"><i style="background:#0A0B0F"></i><i style="background:#10121A"></i><i style="background:#171A24"></i><i style="background:#D9AE4E"></i><i style="background:#F3D27C"></i><i style="background:#B8862B"></i></div>
+            <div style="margin-top:14px"><a class="btn btn-sm" href="?theme=gold" style="background:linear-gradient(135deg,#F3D27C,#D9AE4E 50%,#B8862B);color:#1A1300">Preview gold</a></div></div>
+        </div>
+        <div class="tp" style="background:#050914">
+          <div class="top" style="background:radial-gradient(60% 55% at 70% 30%, rgba(79,141,255,.4), transparent 70%), #050914"></div>
+          <div class="body"><strong style="color:#F1F5FF">Dark Blue</strong><span style="color:#8A96B5">Cool, corporate, close to the infoservices.com reference. Gold logo stays as the single warm accent.</span>
+            <div class="dots"><i style="background:#050914"></i><i style="background:#0B1224"></i><i style="background:#111A33"></i><i style="background:#4F8DFF"></i><i style="background:#7FB0FF"></i><i style="background:#2F5FD6"></i></div>
+            <div style="margin-top:14px"><a class="btn btn-sm" href="?theme=blue" style="background:linear-gradient(135deg,#7FB0FF,#4F8DFF 50%,#2F5FD6);color:#04122B">Preview dark blue</a></div></div>
+        </div>
+        <div class="tp" style="background:#0A0912">
+          <div class="top" style="background:radial-gradient(55% 50% at 75% 25%, rgba(139,92,246,.45), transparent 70%), radial-gradient(40% 40% at 20% 80%, rgba(6,182,212,.3), transparent 70%), #0A0912"></div>
+          <div class="body"><strong style="color:#F7F5FF">Multi-color</strong><span style="color:#9A92B8">Cyan → violet → pink → amber spectrum. Energetic and AI-forward; icons cycle through four tints.</span>
+            <div class="dots"><i style="background:#0A0912"></i><i style="background:#120F1F"></i><i style="background:#06B6D4"></i><i style="background:#8B5CF6"></i><i style="background:#EC4899"></i><i style="background:#F59E0B"></i></div>
+            <div style="margin-top:14px"><a class="btn btn-sm" href="?theme=multi" style="background:linear-gradient(135deg,#06B6D4,#8B5CF6 40%,#EC4899 75%,#F59E0B);color:#fff">Preview multi-color</a></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PALETTE -->
+  <section class="section ds-section" id="palette" style="background:var(--bg-2)">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">02 · Palette</span><h2>Color <span class="grad-text">tokens</span></h2><p class="muted">Swatches below are live: they read the current theme's CSS variables.</p></div>
+      <h4>Surfaces &amp; text</h4>
+      <div class="swatches reveal-stagger" style="margin-bottom:28px">
+        <div class="swatch"><div class="color" style="background:var(--bg)"></div><div class="info"><strong>Background</strong><code>--bg</code></div></div>
+        <div class="swatch"><div class="color" style="background:var(--bg-2)"></div><div class="info"><strong>Surface</strong><code>--bg-2</code></div></div>
+        <div class="swatch"><div class="color" style="background:var(--bg-3)"></div><div class="info"><strong>Elevated</strong><code>--bg-3</code></div></div>
+        <div class="swatch"><div class="color" style="background:var(--bg-4)"></div><div class="info"><strong>Raised</strong><code>--bg-4</code></div></div>
+        <div class="swatch"><div class="color" style="background:var(--text)"></div><div class="info"><strong>Text</strong><code>--text</code></div></div>
+        <div class="swatch"><div class="color" style="background:var(--muted)"></div><div class="info"><strong>Muted</strong><code>--muted</code></div></div>
+      </div>
+      <h4>Accents</h4>
+      <div class="swatches reveal-stagger" style="margin-bottom:28px">
+        <div class="swatch"><div class="color" style="background:var(--accent)"></div><div class="info"><strong>Accent</strong><code>--accent</code></div></div>
+        <div class="swatch"><div class="color" style="background:var(--accent-2)"></div><div class="info"><strong>Accent light</strong><code>--accent-2</code></div></div>
+        <div class="swatch"><div class="color" style="background:var(--accent-3)"></div><div class="info"><strong>Accent deep</strong><code>--accent-3</code></div></div>
+        <div class="swatch"><div class="color" style="background:var(--c1)"></div><div class="info"><strong>Tint 1</strong><code>--c1</code></div></div>
+        <div class="swatch"><div class="color" style="background:var(--c3)"></div><div class="info"><strong>Tint 3</strong><code>--c3</code></div></div>
+        <div class="swatch"><div class="color" style="background:var(--c4)"></div><div class="info"><strong>Tint 4</strong><code>--c4</code></div></div>
+      </div>
+      <h4>Gradient</h4>
+      <div class="grad-bar reveal"></div>
+      <p class="small muted" style="margin-top:10px"><code>--grad</code> is used for primary buttons, stat numbers and accent bars. <code>--grad-text</code> is a lighter variant tuned for headline text.</p>
+
+      <h4 style="margin-top:36px">Hex reference by theme</h4>
+      <div style="overflow-x:auto">
+      <table class="spec-table reveal">
+        <thead><tr><th>Token</th><th>Gold</th><th>Dark Blue</th><th>Multi-color</th></tr></thead>
+        <tbody>
+          <tr><td><code>--bg</code></td><td>#0A0B0F</td><td>#050914</td><td>#0A0912</td></tr>
+          <tr><td><code>--bg-2</code></td><td>#10121A</td><td>#0B1224</td><td>#120F1F</td></tr>
+          <tr><td><code>--bg-3</code></td><td>#171A24</td><td>#111A33</td><td>#1A1630</td></tr>
+          <tr><td><code>--text</code></td><td>#F5F3EE</td><td>#F1F5FF</td><td>#F7F5FF</td></tr>
+          <tr><td><code>--muted</code></td><td>#8F8C84</td><td>#8A96B5</td><td>#9A92B8</td></tr>
+          <tr><td><code>--accent</code></td><td>#D9AE4E</td><td>#4F8DFF</td><td>#8B5CF6</td></tr>
+          <tr><td><code>--accent-2</code></td><td>#F3D27C</td><td>#7FB0FF</td><td>#EC4899</td></tr>
+          <tr><td><code>--accent-3</code></td><td>#B8862B</td><td>#2F5FD6</td><td>#06B6D4</td></tr>
+          <tr><td><code>--c1 … --c4</code></td><td>#F3D27C · #D9AE4E · #B8862B · #E6C36A</td><td>#7FB0FF · #4F8DFF · #22D3EE · #A5B4FC</td><td>#22D3EE · #A78BFA · #F472B6 · #FBBF24</td></tr>
+          <tr><td><code>--grad</code></td><td>#F3D27C → #D9AE4E → #B8862B</td><td>#7FB0FF → #4F8DFF → #2F5FD6</td><td>#06B6D4 → #8B5CF6 → #EC4899 → #F59E0B</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="section ds-section" id="type">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">03 · Typography</span><h2>Sora for display, <span class="grad-text">Inter for body</span></h2><p class="muted">Both are open-source Google Fonts. Headlines use tight letter-spacing (−0.02 to −0.03em) and one gradient-accented phrase per heading, never more.</p></div>
+      <div class="type-scale reveal">
+        <div><code>h1 · Sora 600 · clamp(2.5rem, 5.4vw, 4.4rem)</code><h1 style="margin:0">Where innovation meets <span class="grad-text">technology mastery</span></h1></div>
+        <div><code>h2 · Sora 600 · clamp(1.9rem, 3.4vw, 2.9rem)</code><h2 style="margin:0">Engineering intelligent outcomes</h2></div>
+        <div><code>h3 · Sora 600 · 1.2–1.45rem</code><h3 style="margin:0">Artificial Intelligence</h3></div>
+        <div><code>eyebrow · Sora 600 · .78rem · uppercase</code><span class="eyebrow" style="margin:0">Capabilities</span></div>
+        <div><code>lead · Inter 400 · 1.05–1.25rem</code><p class="lead" style="margin:0">Bilva builds world-class software, AI and cloud solutions for enterprise clients.</p></div>
+        <div><code>body · Inter 400 · 1rem / 1.6</code><p style="margin:0;color:var(--text-2)">Our client engagement model is built on the cornerstones of integrity and trust, delivering transformational business solutions.</p></div>
+        <div><code>small · Inter · .875rem</code><p class="small muted" style="margin:0">Supporting text, captions and metadata.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUTTONS & CHIPS -->
+  <section class="section ds-section" id="buttons" style="background:var(--bg-2)">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">04 · Buttons &amp; chips</span><h2>Actions and <span class="grad-text">labels</span></h2></div>
+      <h4>Buttons</h4>
+      <div class="component-row reveal" style="margin-bottom:24px">
+        <a class="btn btn-primary" href="#">Primary <i data-icon="arrow"></i></a>
+        <a class="btn btn-ghost" href="#">Ghost</a>
+        <a class="btn btn-outline-grad" href="#">Gradient outline</a>
+        <a class="btn btn-primary btn-sm" href="#">Small</a>
+        <a class="btn btn-primary btn-lg" href="#">Large <i data-icon="arrow"></i></a>
+        <a class="link-arrow" href="#">Text link <i data-icon="arrow"></i></a>
+      </div>
+      <h4>Chips</h4>
+      <div class="component-row reveal" style="margin-bottom:24px">
+        <span class="chip"><span class="dot"></span> Live status</span>
+        <span class="chip">Category</span>
+        <span class="chip outline">Outline tag</span>
+        <span class="chip outline">Salesforce</span>
+      </div>
+      <h4>Stats</h4>
+      <div class="stats reveal" style="max-width:720px">
+        <div class="stat"><div class="num">5+</div><div class="lbl">Years</div></div>
+        <div class="stat"><div class="num">110+</div><div class="lbl">Reviews</div></div>
+        <div class="stat"><div class="num">6</div><div class="lbl">Industries</div></div>
+        <div class="stat"><div class="num">4</div><div class="lbl">Platforms</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="section ds-section" id="cards">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">05 · Cards</span><h2>Card <span class="grad-text">variants</span></h2><p class="muted">All cards share a 1px border, 18px radius and a hover lift. Icon tints cycle through <code>--c1…--c4</code> in the multi-color theme.</p></div>
+      <div class="grid grid-3 reveal-stagger" style="margin-bottom:24px">
+        <div class="card"><div class="ico-box"><i data-icon="sparkles"></i></div><h3>Service card</h3><p>Icon, title, two-line description and a text link. Used in capability grids.</p><span class="link-arrow">Learn more <i data-icon="arrow"></i></span></div>
+        <div class="card accent-top"><div class="ico-box"><i data-icon="cloud"></i></div><h3>Accent-top card</h3><p>Same card with a gradient bar on top. Used for the four pillars.</p></div>
+        <div class="card quote"><div class="stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div><blockquote>"Testimonial card with rating, quote and attribution."</blockquote><div class="who"><div class="avatar">JD</div><div><strong>Jane Doe</strong><span>CIO, Example Co.</span></div></div></div>
+      </div>
+      <div class="grid grid-3 reveal-stagger">
+        <a class="img-card" href="#"><img src="assets/img/photos/healthcare.jpg" alt=""><div class="body"><span class="chip">Image card</span><h3>Industry card</h3><p>Photo with dark gradient overlay; gradient underline on hover.</p></div></a>
+        <a class="case-card" href="#"><div class="media"><img src="assets/img/photos/dashboard.jpg" alt=""></div><div class="body"><div class="meta"><span class="chip">Case study</span></div><h3>Media card</h3><p>Image on top, meta chips, title and link. Used for case studies and insights.</p><span class="link-arrow">Read <i data-icon="arrow"></i></span></div></a>
+        <div class="step"><h4>Step card</h4><p>Auto-numbered with a gradient counter. Used for process sections.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMS -->
+  <section class="section ds-section" id="forms" style="background:var(--bg-2)">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">06 · Forms</span><h2>Inputs and <span class="grad-text">focus states</span></h2></div>
+      <form class="form card reveal" data-demo novalidate style="max-width:760px">
+        <div class="field"><label for="d-name">Text input</label><input id="d-name" type="text" placeholder="Placeholder"></div>
+        <div class="field"><label for="d-sel">Select</label><select id="d-sel"><option>Option one</option><option>Option two</option></select></div>
+        <div class="field full"><label for="d-ta">Textarea</label><textarea id="d-ta" placeholder="Multi-line input"></textarea></div>
+        <div class="full"><button class="btn btn-primary" type="submit">Submit <i data-icon="arrow"></i></button></div>
+        <p class="form-msg full small" style="display:none;color:var(--accent);margin:0"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ICONS -->
+  <section class="section ds-section" id="icons">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">07 · Icons</span><h2>Inline SVG <span class="grad-text">icon set</span></h2><p class="muted">Lucide-style 24px strokes, rendered from <code>main.js</code>. Use <code>&lt;i data-icon="name"&gt;&lt;/i&gt;</code> anywhere.</p></div>
+      <div class="icon-grid reveal" id="icon-grid"></div>
+    </div>
+  </section>
+
+  <!-- LOGO -->
+  <section class="section ds-section" id="logo" style="background:var(--bg-2)">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">08 · Logo</span><h2>Logo <span class="grad-text">usage</span></h2><p class="muted">The original gold leaf-mark from bilva.us, paired with a Sora wordmark. Keep clear space equal to half the mark's height on all sides.</p></div>
+      <div class="logo-usage reveal-stagger">
+        <div style="background:var(--bg)"><img src="assets/img/logo.png" alt="Bilva mark"><span class="small muted">Mark on background</span></div>
+        <div style="background:var(--bg-3)"><a class="brand" style="margin:0"><img src="assets/img/logo.png" alt="Bilva mark" style="width:42px"><span class="wordmark">Bilva</span></a><span class="small muted">Mark + wordmark (header)</span></div>
+        <div style="background:#fff"><img src="assets/img/logo.png" alt="Bilva mark"><span class="small" style="color:#555">On light (print / email)</span></div>
+      </div>
+      <div class="note" style="margin-top:20px">Recommendation: request or recreate an SVG version of the mark before launch. The current PNG is 168×170px and will soften on high-DPI displays at sizes above ~80px.</div>
+    </div>
+  </section>
+
+  <!-- TOKENS -->
+  <section class="section ds-section" id="tokens">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">09 · Tokens</span><h2>Spacing, radius &amp; <span class="grad-text">layout</span></h2></div>
+      <h4>Spacing scale</h4>
+      <div class="token-grid reveal-stagger" style="margin-bottom:28px">
+        <div class="token"><strong>4 / 8 / 12 / 16</strong><code>--space-1 … --space-4</code></div>
+        <div class="token"><strong>24 / 32</strong><code>--space-5, --space-6</code></div>
+        <div class="token"><strong>48 / 64</strong><code>--space-7, --space-8</code></div>
+        <div class="token"><strong>96 / 128</strong><code>--space-9, --space-10 (sections)</code></div>
+      </div>
+      <h4>Radius</h4>
+      <div class="radius-demo reveal" style="margin-bottom:28px">
+        <div style="border-radius:var(--radius-sm)">10px sm</div>
+        <div style="border-radius:var(--radius)">18px base</div>
+        <div style="border-radius:var(--radius-lg)">28px lg</div>
+        <div style="border-radius:var(--radius-pill)">pill</div>
+      </div>
+      <h4>Layout</h4>
+      <table class="spec-table reveal">
+        <tbody>
+          <tr><td>Container</td><td><code>max-width: 1200px</code>, 24px side gutter</td></tr>
+          <tr><td>Breakpoints</td><td><code>1080px</code> (tablet landscape) · <code>900px</code> (mobile nav) · <code>640px</code> (phone)</td></tr>
+          <tr><td>Header</td><td>76px sticky, blurred background, mega menu for Capabilities</td></tr>
+          <tr><td>Motion</td><td>350ms ease for hover; scroll reveal with 70ms stagger; respects <code>prefers-reduced-motion</code></td></tr>
+          <tr><td>Theme switch</td><td><code>html[data-theme="gold|blue|multi"]</code>, persisted in localStorage, overridable with <code>?theme=</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/main.js"></script>
+<script>
+  (function () {
+    var names = ['sparkles','cloud','globe','smartphone','users','layers','cpu','briefcase','shield','building','trending','check','arrow','phone','mail','pin','clock','star','zap','database','code','chart','heart','dollar','bag','truck','package','factory','flask','rocket','target','quote','settings','lock','handshake','linkedin','x','facebook','youtube','chevron'];
+    var g = document.getElementById('icon-grid');
+    g.innerHTML = names.map(function (n) { return '<div>' + window.bilvaIcon(n) + '<span>' + n + '</span></div>'; }).join('');
+  })();
+</script>
+</body>
+</html>
